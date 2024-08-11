@@ -1,18 +1,15 @@
-# Minecraft 插件搜索工具
+# Plug
 
-一个简单的插件搜索工具，帮你快速找到你想要的插件。
+![Plug Background Image](https://github.com/user-attachments/assets/d510247e-7c10-4413-8919-315f797b696d)
 
-## 注意事项
+## Note
 
-* 搜索关键词不应该包含插件，比如我想搜索`优化插件`，我应该输入`优化`而不是`优化插件`。
-* 搜索的时候千万不可以开启 VPN。
-* 由于搜索工具底层是基于 Bing (中国版)，所以可能会搜出一些与插件或关键词无关的东西。
-* 输出顺序为公平起见会被打乱。
+* The order of plugin outputs found will be disrupted for fairness (which is a feature inherited from [upstream](https://github.com/lilingfengdev/PluginSearchEngine).
 
-## GUI
+## GUI & CLI
 
-GUI 版本目前主要由[氿月](https://github.com/Lafcadia)进行维护，支持原版的所有功能，并且同步更新。对于萌新相对较友好。
+See [PluginSearchEngine (Upstream)](https://github.com/lilingfengdev/PluginSearchEngine).
 
-### 环境配置
-1. 第三方模块要求参考 requirements.txt。
-2. 请使用 PyCharm（不使用其它IDE的理由见 Issue #7 #8）。
+### Environment
+1. See `requirements.txt` for extra modules.
+2. Consider to use PyCharm rather than any other IDEs. <sub>(Trust me there are important reasons behind that.)</sub>
