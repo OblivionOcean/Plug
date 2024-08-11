@@ -2,9 +2,13 @@
 
 ![Plug Background Image](https://github.com/user-attachments/assets/d510247e-7c10-4413-8919-315f797b696d)
 
-## Note
+## Usage
 
-* The order of plugin outputs found will be disrupted for fairness (which is a feature inherited from [upstream](https://github.com/lilingfengdev/PluginSearchEngine).
+It is an API running on Vercel using Flask Framework that provides the ability to search Minecraft Plugins online.
+
+## Demo
+
+(Still under construction...)
 
 ## GUI & CLI
 

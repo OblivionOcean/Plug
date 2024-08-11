@@ -2,9 +2,14 @@ import typing
 
 from core.engine.base import SearchResult
 from core.engine.bing import Bing
+from core.engine.google import Google
 
 
 class Tinksp:
 
-    def search(self, keywords, translation, engine=Bing()) -> typing.List[SearchResult]:
+    def search(self, keywords, translation=False, e="bing") -> typing.List[SearchResult]:
+        if e == "bing":
+            engine = Bing()
+        elif e == "google":
+            engine = Google()
         return engine.search(keywords, site="tinksp.com")[:5]

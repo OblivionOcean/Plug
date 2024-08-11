@@ -157,3 +157,6 @@ ehthumbs_vista.db
 *.stackdump
 /pse.dist
 *.exe
+
+cli/
+gui/

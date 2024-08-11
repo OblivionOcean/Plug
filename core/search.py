@@ -8,13 +8,13 @@ from core.engine.base import SearchResult
 from concurrent.futures import ThreadPoolExecutor, wait
 
 
-def search(keyword: str, translation=True) -> List[SearchResult]:
+def search(keyword: str, search_engine: str, translation=False) -> List[SearchResult]:
     engine = [Spigot, Tinksp, Minebbs, Klpbbs]
     results = []
     with ThreadPoolExecutor(max_workers=6) as executor:
         future_list = []
         for e in engine:
-            future = executor.submit(e().search, keyword, translation)
+            future = executor.submit(e().search, keyword, translation, search_engine)
             future_list.append(future)
         wait(future_list)
         for future in future_list:

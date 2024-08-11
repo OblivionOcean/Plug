@@ -13,12 +13,12 @@ class SpigotResult(SearchResult):
 
 
 class Spigot(SearchEngine):
-    def search(self, keywords, translation=True) -> typing.List[SearchResult]:
+    def search(self, keywords, translation=False, search_engine="bing") -> typing.List[SearchResult]:
         key = translate(keywords, EN)
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                                  'Chrome/93.0.4577.63 Safari/537.36'}
         data = json.loads(requests.get(
-            f"https://fof1092.de/Plugins/SSE/resourceSearchV2.php?SearchText={key}", headers=headers).content)
+            f"https://fof1092.de/Plugins/SSE/resourceSearchV2.php?SearchText={key}", headers=headers, verify=False).content)
         result = []
         for plug in data:
             result.append(
