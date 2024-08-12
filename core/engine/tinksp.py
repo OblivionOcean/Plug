@@ -12,4 +12,6 @@ class Tinksp:
             engine = Bing()
         elif e == "google":
             engine = Google()
+        else:
+            raise ValueError("Invalid engine: %s" % e)
         return engine.search(keywords, site="tinksp.com")[:5]

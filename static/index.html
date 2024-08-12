@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>     
 <html lang="en">
 
 <head>
@@ -13,13 +13,24 @@
     <h1 class="title">Plug</h1>
     <div class="form">
         <input placeholder="Name of the Plugin, Chinese or English" name="q" class="q-input" id="search">
+        <span id="error"></span>
         <br>
         <span class="select">
-            <input type="radio" name="SearchE" value="bing" checked> Bing
+            <input type="radio" name="SearchE" value="bing" checked> Bing<wbr>
             <input type="radio" name="SearchE" value="google"> Google
         </span>
-        <button type="button" class="submit" onclick="search()">Search</button>
+        <button type="button" class="submit" onclick="search()" id="submit">Search</button>
     </div>
+    <table class="result" id="result-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+        </tbody>
+    </table>
 </body>
 
 </html>

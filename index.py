@@ -12,10 +12,10 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 3600  # 缓存时间为1小时
 app.config['STATIC_FOLDER'] = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 'static')
 
+
 @app.route('/<path:filename>')
 def static_files(filename):
     return send_from_directory(app.config['STATIC_FOLDER'], filename)
-
 
 @app.route('/s', methods=['GET'])
 def about():
@@ -29,7 +29,6 @@ def about():
             except Exception as e:
                 print(e)
                 print(obj.title, obj.summary, obj.url)
-        print(content)
     except Exception as e:
         return "Something's wrong. " + str(e), 500, {"Content-Type": "application/json"}
         # print(e)
