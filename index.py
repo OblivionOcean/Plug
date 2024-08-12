@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, request, send_from_directory
 from os.path import dirname, abspath, join
 from json import loads, dumps
 import os
@@ -16,6 +16,10 @@ app.config['STATIC_FOLDER'] = os.path.join(
 @app.route('/<path:filename>')
 def static_files(filename):
     return send_from_directory(app.config['STATIC_FOLDER'], filename)
+
+@app.route('/')
+def home():
+    return send_from_directory(app.config['STATIC_FOLDER'], 'index.html')
 
 @app.route('/s', methods=['GET'])
 def about():
