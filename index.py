@@ -1,19 +1,20 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from os.path import dirname, abspath, join
 from json import loads, dumps
-import random
+import os
 from core import search
-import requests
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 3600  # 缓存时间为1小时
+app.config['STATIC_FOLDER'] = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), 'static')
 
-
-@app.route('/')
-def home():
-    return render_template('index.html')
+@app.route('/<path:filename>')
+def static_files(filename):
+    return send_from_directory(app.config['STATIC_FOLDER'], filename)
 
 
 @app.route('/s', methods=['GET'])
