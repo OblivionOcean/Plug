@@ -8,6 +8,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 3600  # 缓存时间为1小时
 app.config['STATIC_FOLDER'] = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 'static')
@@ -41,5 +42,4 @@ def about():
 
 
 if __name__ == '__main__':
-    app.config['JSON_AS_ASCII'] = False
     app.run(host='127.0.0.1', port=2333)
