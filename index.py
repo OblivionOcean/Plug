@@ -29,6 +29,11 @@ def about():
     try:
         content = []
         request_data, s = request.args.get('q'), request.args.get('s')
+        if s in ["谷歌", "必应"]:
+            if s == "谷歌":
+                s = "Google"
+            elif s == "必应":
+                s = "Bing"
         result = search.search(request_data, s)
         for obj in result:
             try:
