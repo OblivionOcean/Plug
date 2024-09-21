@@ -18,9 +18,11 @@ app.config['STATIC_FOLDER'] = os.path.join(
 def static_files(filename):
     return send_from_directory(app.config['STATIC_FOLDER'], filename)
 
+
 @app.route('/')
 def home():
     return send_from_directory(app.config['STATIC_FOLDER'], 'index.html')
+
 
 @app.route('/s', methods=['GET'])
 def about():
