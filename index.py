@@ -31,9 +31,9 @@ def about():
         request_data, s = request.args.get('q'), request.args.get('s')
         if s in ["谷歌", "必应"]:
             if s == "谷歌":
-                s = "Google"
+                s = "google"
             elif s == "必应":
-                s = "Bing"
+                s = "bing"
         result = search.search(request_data, s)
         for obj in result:
             try:
