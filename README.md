@@ -10,6 +10,10 @@ It is an API using Flask Framework that provides the ability to search Minecraft
 
 https://plug.teamoo.club/
 
+## Credit
+1. Lafcadia, Main Developer, President of Team OblivionOcean.
+2. Fgaoxing, Developer, CEO of Team OblivionOcean.
+
 ## GUI & CLI
 
 See [PluginSearchEngine (Upstream)](https://github.com/lilingfengdev/PluginSearchEngine).
