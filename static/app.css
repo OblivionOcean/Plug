@@ -14,20 +14,20 @@ body {
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     top: 0;
     filter: blur(2px);
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .title {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #fafafa;
+    color: #fff;
+    margin-top: 30px;
 }
 
 .form {
